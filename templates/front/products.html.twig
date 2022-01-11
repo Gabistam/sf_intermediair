@@ -1,0 +1,23 @@
+{% extends "front/base.html.twig" %}
+
+{% block main %}
+
+	{% for product in products %}
+		<div class="container">
+			<div class="card" style="width: 50%;">
+				<img src="https://picsum.photos/450/250" class="card-img-top" alt="...">
+				<div class="card-body">
+
+					<h2>
+
+						<a href="{{ path("product_show", {'id' : product.id } ) }}">
+							<button type="button" class="btn btn-primary">{{ product.name }}</button>
+						</a>
+					</h2>
+
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+
+{% endblock %}

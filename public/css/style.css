@@ -1,0 +1,33 @@
+
+body
+{
+    background-color: #6a9cfd;
+    padding: 100px;
+}
+
+.container
+{
+    margin-top: 100px; 
+    margin-left: 35%;
+    padding: 5px;
+
+}
+
+.card
+{
+    border-radius: 16px;
+    border: solid 8px white;
+}
+
+.card-body
+{
+    text-align: center;
+}
+
+.card-body button
+{
+    width: 70%;
+    border-radius: 30px;
+}
+
+
