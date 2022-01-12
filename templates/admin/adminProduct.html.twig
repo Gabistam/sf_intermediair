@@ -1,0 +1,22 @@
+{% extends "admin/adminBase.html.twig" %}
+
+{% block main %}
+	{% for product in products %}
+		<div class="container">
+			<div class="card" style="width: 50%;">
+				<img src="{{ asset('media/' ~ image.src) }}" alt="{{ image.alt }}">
+				<div class="card-body">
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Produit :
+							{{ product.name }}</li>
+						<li class="list-group-item">Prix :
+							{{ product.price }}</li>
+						<li class="list-group-item">Stock :
+							{{ product.stock }}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+
+{% endblock %}

@@ -9,7 +9,31 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<h1>{{front}}</h1>
+		<div class="global-entity">
+			<h1>{{admin}}</h1><br><br>
+			<div class="display: flex;
+										        flex-flow: row wrap;">
+				<div>
+					{% for gproduct in gproducts.getAll() %}
+						<h5>{{ gproduct.name }}</h5>
+					{% endfor %}
+				</div>
+				<hr>
+				<div>
+					{% for gbrand in gbrands.getAll() %}
+						<h5>{{ gbrand.name }}</h5>
+					{% endfor %}
+				</div>
+				<hr>
+				<div>
+					{% for gcategory in gcategories.getAll() %}
+						<h5>{{ gcategory.name }}</h5>
+					{% endfor %}
+				</div>
+			</div>
+
+		</div>
+
 		{% block main %}{% endblock %}
 
 	</body>

@@ -1,0 +1,28 @@
+{% extends "admin/adminBase.html.twig" %}
+
+{% block main %}
+	{% for category in categories %}
+		<div class="container">
+			<div class="card" style="width: 50%;">
+				<img src="{{ asset('media/' ~ category.media) }}" alt="{{ category.name }}">
+				<div class="card-body">
+					{{ form_start(categoryForm) }}
+
+					{{ form_label(categoryForm.name, 'Nom de la catégorie : ', {'label_attr' : { 'class' : 'label' } } ) }}
+					{{ form_widget(categoryForm.name, {'attr' : {'placeholder' : 'Nom de la catégorie', 'class' : 'cat-name'} } ) }}
+
+					{{ form_label(categoryForm.description, 'Description de la catégorie : ', {'label_attr' : { 'class' : 'label' } } ) }}
+					{{ form_widget(categoryForm.description, {'attr' : {'placeholder' : 'Description de la catégorie', 'class' : 'cat-description'} } ) }}
+					<hr>
+					{{form_label(categoryForm.media, 'Image')}}
+					{{form_widget(categoryForm.media)}}
+					<hr><br>
+					{{ form_widget(categoryForm.enregistrer, { 'attr' : {'class' : 'btn'} } ) }}
+
+					{{ form_end(categoryForm) }}
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+
+{% endblock %}

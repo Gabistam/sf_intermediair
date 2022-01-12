@@ -25,7 +25,7 @@ class Brand
     private $name;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string")
      */
     private $description;
 
@@ -33,6 +33,11 @@ class Brand
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="brand")
      */
     private $products;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $media;
 
     public function __construct()
     {
@@ -94,6 +99,18 @@ class Brand
                 $product->setBrand(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMedia(): ?string
+    {
+        return $this->media;
+    }
+
+    public function setMedia(string $media): self
+    {
+        $this->media = $media;
 
         return $this;
     }

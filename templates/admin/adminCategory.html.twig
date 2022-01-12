@@ -1,0 +1,19 @@
+{% extends "admin/adminBase.html.twig" %}
+
+{% block main %}
+	{% for category in categories %}
+		<div class="container">
+			<div class="card" style="width: 50%;">
+				<img src="{{ asset('media/' ~ category.media) }}" alt="{{ category.name }}">
+				<div class="card-body">
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Catégorie :
+							{{ category.name }}</li>
+						<li class="list-group-item">Description :
+							{{ category.description }}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}

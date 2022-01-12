@@ -34,14 +34,15 @@ class Category
      */
     private $products;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $media;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
     }
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
 
     public function getId(): ?int
     {
@@ -98,6 +99,18 @@ class Category
                 $product->setCategory(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMedia(): ?string
+    {
+        return $this->media;
+    }
+
+    public function setMedia(string $media): self
+    {
+        $this->media = $media;
 
         return $this;
     }

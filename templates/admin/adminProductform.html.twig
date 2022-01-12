@@ -1,0 +1,32 @@
+{% extends "admin/adminBase.html.twig" %}
+
+{% block main %}
+	<div class="container">
+		<div class="card" style="width: 50%;">
+			<img src="https://picsum.photos/450/250" class="card-img-top" alt="...">
+			<div class="card-body">
+				{{form_start(productForm)}}
+
+				{{form_label(productForm.name, 'Nom')}}
+				{{form_widget(productForm.name)}}
+				<hr>
+				{{form_label(productForm.name, 'Prix')}}
+				{{form_widget(productForm.price)}}
+				<hr>
+				{{form_label(productForm.name, 'Stock')}}
+				{{form_widget(productForm.stock)}}
+				<hr>
+				{{form_label(productForm.name, 'Catégorie')}}
+				{{form_widget(productForm.category)}}
+
+				{{form_label(productForm.name, 'Marque')}}
+				{{form_widget(productForm.brand)}}
+				<hr>
+				{{form_widget(productForm.Soumettre)}}
+
+				{{form_end(productForm)}}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
